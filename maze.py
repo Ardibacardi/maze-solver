@@ -12,7 +12,7 @@ class Maze:
         num_cols,
         cell_size_x,
         cell_size_y,
-        win,
+        win=None,
     ):
         self._x1 = x1
         self._y1 = y1
@@ -28,12 +28,12 @@ class Maze:
         self._cells = [
             [
                 Cell(self._win)
-                for _ in range(self._num_cols)
+                for _ in range(self._num_rows)
             ]
-            for _ in range(self._num_rows)
+            for _ in range(self._num_cols)
         ]
-        for i in range(self._num_rows):
-            for j in range(self._num_cols):
+        for i in range(self._num_cols):
+            for j in range(self._num_rows):
 
                 self._draw_cell(i,j)
 
